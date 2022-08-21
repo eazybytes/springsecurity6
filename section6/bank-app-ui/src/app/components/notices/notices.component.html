@@ -1,0 +1,21 @@
+<app-header></app-header>
+<section class="ftco-section" id="cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 cardheader" *ngFor="let notice of notices">
+        <div class="card">
+          <div class="icon-wrap px-4 pt-4">
+            <div class="icon d-flex justify-content-center align-items-center bg-success rounded-circle fa fa-envelope-open">
+              <span class="ion-logo-ionic text-light"></span>
+            </div>
+          </div>
+          <div class="card-body pb-5 px-4">
+            <h5 class="card-title">{{notice.noticeSummary}}</h5>
+            <p class="card-text">{{notice.noticeDetails}}</p>
+            <a routerLink="/contact" class="btn btn-success">Contact US</a>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>

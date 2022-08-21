@@ -1,0 +1,140 @@
+.i-top-header {
+  height: 70px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.46);
+  background-color: #171b1b;
+  background-image: linear-gradient(90deg, #000000 0, #000000 100%);
+  display: flex;
+  position: relative;
+}
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.hleft {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hleft .logo {
+  margin-right: 18px;
+  padding-left: 18px;
+}
+.hleft .logo img {
+  max-width: 150px;
+  display: block;
+}
+.hleft .logo .partner-txt {
+  position: absolute;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  top: 10px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.hleft {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hleft .logo {
+  margin-right: 18px;
+  padding-left: 18px;
+}
+
+a, a:link:hover, a:visited:hover {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hleft .logo img {
+  max-width: 150px;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.hright {
+  display: flex;
+  align-items: center;
+}
+
+.hright ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.hright ul li:first-child {
+  margin-left: 0;
+}
+
+.hright ul li {
+  margin-left: 45px;
+  position: relative;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+.hright ul li.active a, .hright ul li:hover a {
+  border-top: 6px solid #57b846;
+  padding-top: 20px;
+}
+
+.hright ul li a {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  padding-bottom: 8px;
+}
+
+a, a:link:hover, a:visited:hover {
+  text-decoration: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 2px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+

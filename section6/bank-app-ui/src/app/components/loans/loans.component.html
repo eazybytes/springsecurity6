@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="site-section">
+  <div class="table-responsive-md">
+    <div class="row mb-4">
+      <div class="col-md-7">
+        <h3 class="heading-21921">Current Outstanding Balance</h3>
+      </div>
+    </div>
+    <div class="row text-white align-items-center text-center h-100">
+      <div class="col-md-4 bg-dark p-5 " style="height:130px;">
+        <h1 class="text-white">{{currOutstandingBalance | currency}}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive-md">
+    <div class="row mb-4">
+      <div class="col-md-7">
+        <h3 class="heading-21921">Loan Details</h3>
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Start Date</th>
+          <th scope="col">Type</th>
+          <th scope="col">Total Loan</th>
+          <th scope="col">Amount Paid</th>
+          <th scope="col">Outstanding Amt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of loans">
+          <th>{{loan.startDt}}</th>
+          <td>{{loan.loanType}}</td>
+          <td>{{loan.totalLoan | currency}}</td>
+          <td>{{loan.amountPaid | currency}}</td>
+          <td>{{loan.outstandingAmount | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="row mb-5">
+      <div class="col">
+        <div class="">
+          <button class="btn btn-eazybank" routerLink="/dashboard">
+            BACK
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
