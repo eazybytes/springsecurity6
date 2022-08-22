@@ -31,7 +31,7 @@ public class ProjectSecurityConfig {
 					}
 				}).and().csrf().ignoringAntMatchers("/contact").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 				.and().authorizeRequests()
-				.antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
+				.antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards", "/user").authenticated()
 				.antMatchers("/notices", "/contact").permitAll()
 				.and().httpBasic()
 				.and().formLogin();
