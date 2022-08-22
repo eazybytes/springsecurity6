@@ -17,9 +17,6 @@ export class NoticesComponent implements OnInit {
     this.dashboardService.getNoticeDetails().subscribe(
       responseData => {
       this.notices = <any> responseData.body;
-      this.notices.forEach(function (this:NoticesComponent, card: Cards) {
-        
-      }.bind(this)); 
       });
   }
 
