@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="main-content">
+
+  <!-- content -->
+  <div class="container-fluid content-top-gap">
+
+    <div class="welcome-msg pt-3 pb-4">
+      <h1>Hi <span class="text-dark">{{user.name}}</span>, Welcome back</h1>
+      <p>You logged in as {{user.role}}</p>
+    </div>
+
+    <!-- User data -->
+    <div class="statistics">
+      <div class="row">
+        <div class="col-xl-6 pr-xl-2">
+          <div class="row">
+            <div class="col-sm-6 pr-sm-2 statistics-grid" routerLink="/myAccount">
+              <div class="card card_border border-primary-top p-4">
+                <i style="font-size: 3em; color : #343a40;" class="fa fa-user-circle-o"> </i>
+                <h3 class="text-dark number">Account</h3>
+                <p class="stat-text">View account details</p>
+              </div>
+            </div>
+            <div class="col-sm-6 pl-sm-2 statistics-grid" routerLink="/myBalance">
+              <div class="card card_border border-primary-top p-4">
+                <i style="font-size: 3em; color : #343a40;" class="fa fa-usd"> </i>
+                <h3 class="text-dark number">Balance</h3>
+                <p class="stat-text">View total available balance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 pl-xl-2">
+          <div class="row">
+            <div class="col-sm-6 pr-sm-2 statistics-grid" routerLink="/myLoans">
+              <div class="card card_border border-primary-top p-4">
+                <i style="font-size: 3em; color : #343a40;" class="fa fa-money"> </i>
+                <h3 class="text-dark number">Loans</h3>
+                <p class="stat-text">View Loan Details</p>
+              </div>
+            </div>
+            <div class="col-sm-6 pl-sm-2 statistics-grid">
+              <div class="card card_border border-primary-top p-4" routerLink="/myCards">
+                <i style="font-size: 3em; color : #343a40;" class="fa fa-credit-card"> </i>
+                <h3 class="text-dark number">Cards</h3>
+                <p class="stat-text">View credit card details</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- //content -->
+</div>
+<!-- main content end-->
