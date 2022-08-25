@@ -1,9 +1,0 @@
-{
-  "autorun": true,
-  "terminals": [
-    {
-      "name": "typed-assert",
-      "cwd": "[workspaceFolder]"
-    }
-  ]
-}
