@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Account {\n  constructor(customerId, accountNumber, accountType, branchAddress) {\n    this.customerId = customerId || 0;\n    this.accountNumber = accountNumber || 0;\n    this.accountType = accountType || '';\n    this.branchAddress = branchAddress || '';\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
