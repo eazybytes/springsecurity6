@@ -1,0 +1,10 @@
+{
+  "entryPoints": [
+    "./src/index.ts"
+  ],
+  "exclude": "**/__tests__/**/*",
+  "excludeExternals": true,
+  "out": "doc",
+  "readme": "none",
+  "gitRevision": "master"
+}

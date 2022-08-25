@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const AppConstants = {\n  CONTACT_API_URL: \"/contact\",\n  LOGIN_API_URL: \"/user\",\n  ACCOUNT_API_URL: \"/myAccount\",\n  BALANCE_API_URL: \"/myBalance\",\n  LOANS_API_URL: \"/myLoans\",\n  CARDS_API_URL: \"/myCards\",\n  NOTICES_API_URL: \"/notices\"\n};","map":null,"metadata":{},"sourceType":"module"}

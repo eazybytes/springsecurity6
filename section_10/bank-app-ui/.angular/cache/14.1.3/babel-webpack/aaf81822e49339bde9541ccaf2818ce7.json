@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Contact {\n  constructor(contactId, contactName, contactEmail, subject, message) {\n    this.contactId = contactId || '';\n    this.contactName = contactName || '';\n    this.contactEmail = contactEmail || '';\n    this.subject = subject || '';\n    this.message = message || '';\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

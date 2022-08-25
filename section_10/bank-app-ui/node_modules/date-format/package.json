@@ -1,0 +1,46 @@
+{
+  "name": "date-format",
+  "version": "4.0.13",
+  "description": "Formatting Date objects as strings since 2013",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nomiddlename/date-format.git"
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "scripts": {
+    "lint": "eslint lib/* test/*",
+    "pretest": "eslint lib/* test/*",
+    "test": "nyc --check-coverage mocha"
+  },
+  "keywords": [
+    "date",
+    "format",
+    "string"
+  ],
+  "author": "Gareth Jones <gareth.nomiddlename@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "bf59015ab6c9e86454b179374f29debbdb403522",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-mocha": "^4.12.1",
+    "mocha": "^5.2.0",
+    "nyc": "13.0.0",
+    "should": "^13.2.3"
+  },
+  "nyc": {
+    "include": [
+      "lib/**"
+    ],
+    "branches": 100,
+    "lines": 100,
+    "functions": 100
+  }
+}
