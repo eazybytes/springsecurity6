@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background:rgb(235, 234, 233);;
+  background-size: cover;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+.container{
+  margin: auto;
+	width: 70%;
+}
+
+/*-- Profile-form --*/
+.top-grids {
+  background: linear-gradient(45deg, #56ab2f, #a8e063);
+}
+
+.input-group>.input-group-prepend {
+  flex: 0 0 40%;
+}
+.input-group .input-group-text {
+  width: 100%;
+}
+
+.text-danger {
+  color: #ff0000!important;
+  font-weight: 300;
+}
+
+.input-group-text {
+  font-weight: 600;
+}
+
+.w3l-main h3, .w3l-main-2 h3, .form h3{
+  padding: 0.5% 0%;
+  background: #fff;
+  color: #000;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.w3l-main-2 input[type="reset"], .w3l-main-2 input[type="submit"] {
+  border-radius: 1px;
+  padding: 1% 1%;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #000;
+  background: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 1%;
+  transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  font-family: Georgia, serif;
+}
+.w3l-main-2 input[type="reset"]:hover, .w3l-main-2 input[type="submit"]:hover {
+  background: #000;
+  color: #fff;
+transition: 0.5s all;
+-moz-transition: 0.5s all;
+-o-transition: 0.5s all;
+-ms-transition: 0.5s all;
+}
+/*-- //Login-form --*/
+
+.w3l-main-2 form {
+  width: 60%;
+  margin: 4% auto;
+}
+.w3l-main-2 select,.w3l-main-2 input[type="text"],.w3l-main-2 select,.w3l-main-2 input[type="radio"],.w3l-main-2 input[type="number"], .w3l-main-2 input[type="password"], .w3l-main-2 input[type="email"] {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #000;
+  font-family: Georgia, serif;
+}
+.w3l-main-2 input[type="submit"]{
+margin:7% 0em 1.4%;
+font-family: Georgia, serif;
+}
+
+.btn-eazybank{
+    color: #fff;
+    background-color: #57b846;
+    border-color: #57b846;
+}
+
+.table-responsive-md{
+  margin: 100px;
+}
+
+.thead-light{
+  background-color: #57b846;
+  color: #ff0000;
+}
