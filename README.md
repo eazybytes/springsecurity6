@@ -26,3 +26,11 @@
 - Good understanding on Java and Spring concepts
 - Basic understanding on SpringBoot & REST services is a bonus but not mandatory
 - Interest to learn and explore about Spring Security
+
+# Important Links
+
+- Spring website to generate projects - https://start.spring.io/
+- Spring Website - https://spring.io/
+- Spring Projects website - https://spring.io/projects
+- Spring Boot properties - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+- AWS website - https://aws.amazon.com/
