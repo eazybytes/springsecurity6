@@ -1,0 +1,72 @@
+<app-header></app-header>
+<section class="w3l-contact-1">
+  <div class="contacts-9 section-gap">
+    <div class="wrapper">
+      <h3 class="global-title text-center">Contact us</h3>
+      <div class="d-grid contact-view">
+        <div class="cont-details">
+          <div class="cont-top">
+            <div class="cont-left text-center">
+              <span class="fa fa-phone"></span>
+            </div>
+            <div class="cont-right">
+              <h6>Call Us</h6>
+              <p><a href="tel:+456 68 925 89">+456 68 925 89</a></p>
+            </div>
+          </div>
+          <div class="cont-top margin-up">
+            <div class="cont-left text-center">
+              <span class="fa fa-envelope-o"></span>
+            </div>
+            <div class="cont-right">
+              <h6>Email Us</h6>
+              <p><a href="mailto:support@eazybank.com" class="mail">support@eazybank.com</a></p>
+            </div>
+          </div>
+          <div class="cont-top margin-up">
+            <div class="cont-left text-center">
+              <span class="fa fa-map-marker"></span>
+            </div>
+            <div class="cont-right">
+              <h6>Address</h6>
+              <p>123 Main Street, New York, NY 10030</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-content-9">
+          <span class="text-success" *ngIf="model.contactId">Your message is submitted. Reference ID is {{model.contactId}}</span>
+          <form (ngSubmit)="contactForm.valid && saveMessage(contactForm)" #contactForm="ngForm">
+            <div class="twice">
+              <input type="text" class="form-control" name="contactName" id="contactName" placeholder="Name" required
+                [(ngModel)]="model.contactName" #contactName="ngModel">
+              <span class="text-danger" *ngIf="(contactName.touched || contactForm.submitted) &&
+              contactName.errors?.['required']">Error : Name is required !</span>
+            </div>
+            <div class="twice">
+              <input type="email" class="form-control" name="contactEmail" id="contactEmail" placeholder="Email"
+                required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="model.contactEmail"
+                #contactEmail="ngModel">
+              <span class="text-danger" *ngIf="(contactEmail.touched || contactForm.submitted) &&
+                contactEmail.errors?.['required']">Error : Email is required !</span>
+              <span class="text-danger" *ngIf="(contactEmail.touched || contactForm.submitted) &&
+              contactEmail.errors?.['pattern']">Error : Please provide a valid email address !</span>
+            </div>
+            <div class="twice">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required
+                [(ngModel)]="model.subject" #subject="ngModel">
+              <span class="text-danger" *ngIf="(subject.touched || contactForm.submitted) &&
+              subject.errors?.['required']">Error : Subject is required !</span>
+            </div>
+            <div class="twice">
+              <textarea name="message" class="form-control" id="message" placeholder="Message" required
+                [(ngModel)]="model.message" #message="ngModel">></textarea>
+              <span class="text-danger" *ngIf="(message.touched || contactForm.submitted) &&
+            message.errors?.['required']">Error : Message is required !</span>
+            </div>
+            <button type="submit" class="btn btn-contact">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
