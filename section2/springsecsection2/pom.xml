@@ -12,7 +12,7 @@
 	<artifactId>springsecsection2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springsecsection2</name>
-	<description>Demo project for Spring Boot &amp; Spring Security</description>
+	<description>Demo project for Spring Boot and Spring Security</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
