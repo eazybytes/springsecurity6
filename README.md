@@ -34,3 +34,5 @@
 - Spring Projects website - https://spring.io/projects
 - Spring Boot properties - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
 - AWS website - https://aws.amazon.com/
+- SQLECTRON website - https://sqlectron.github.io
+- Free MySQL DB website - https://www.freemysqlhosting.net
