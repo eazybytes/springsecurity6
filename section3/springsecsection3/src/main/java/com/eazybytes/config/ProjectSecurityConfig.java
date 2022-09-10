@@ -17,56 +17,61 @@ import javax.sql.DataSource;
 @Configuration
 public class ProjectSecurityConfig {
 
-	@Bean
-	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
-				.antMatchers("/notices", "/contact").permitAll()
-				.and().httpBasic()
-				.and().formLogin();
-		return http.build();
-	}
+    @Bean
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+                        .authorizeRequests()
+                        .antMatchers("/myAccount","/myBalance","/myLoans","/myCards").authenticated()
+                        .antMatchers("/notices","/contact","/register").permitAll()
+                .and().formLogin()
+                .and().httpBasic();
+        return http.build();
+    }
 
-	/*@Bean
-	public InMemoryUserDetailsManager userDetailsService() {
-
-		*//*Approach 1 where we use withDefaultPasswordEncoder() method
+    /*@Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        *//*Approach 1 where we use withDefaultPasswordEncoder() method
 		while creating the user details*//*
+        *//*UserDetails admin = User.withDefaultPasswordEncoder()
+                .username("admin")
+                .password("12345")
+                .authorities("admin")
+                .build();
+        UserDetails user = User.withDefaultPasswordEncoder()
+                .username("user")
+                .password("12345")
+                .authorities("read")
+                .build();
+        return new InMemoryUserDetailsManager(admin, user);*//*
 
-		*//*UserDetails admin = User.withDefaultPasswordEncoder()
-				.username("admin")
-				.password("12345")
-				.authorities("admin")
-				.build();
-		UserDetails user = User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("12345")
-				.authorities("read")
-				.build();
-		return new InMemoryUserDetailsManager(admin, user);*//*
+         *//*Approach 2 where we use NoOpPasswordEncoder Bean
+		while creating the user details*//*
+        UserDetails admin = User.withUsername("admin")
+                .password("12345")
+                .authorities("admin")
+                .build();
+        UserDetails user = User.withUsername("user")
+                .password("12345")
+                .authorities("read")
+                .build();
+        return new InMemoryUserDetailsManager(admin, user);
 
-		*//*InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
-		UserDetails admin = User.withUsername("admin").password("12345").authorities("admin").build();
-		UserDetails user = User.withUsername("user").password("12345").authorities("read").build();
-		inMemoryUserDetailsManager.createUser(admin);
-		inMemoryUserDetailsManager.createUser(user);
-		return inMemoryUserDetailsManager;*//*
-	}*/
+    }*/
 
-	/**
-	 * NoOpPasswordEncoder is not recommended for production usage.
-	 * Use only for non-prod.
-	 *
-	 * @return PasswordEncoder
-	 */
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
+    /*@Bean
+    public UserDetailsService userDetailsService(DataSource dataSource) {
+        return new JdbcUserDetailsManager(dataSource);
+    }*/
 
-	/*@Bean
-	public UserDetailsService userDetailsService(DataSource dataSource) {
-		return new JdbcUserDetailsManager(dataSource);
-	}*/
+    /**
+     * NoOpPasswordEncoder is not recommended for production usage.
+     * Use only for non-prod.
+     *
+     * @return PasswordEncoder
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+    }
 
 }
