@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EazyBankUserDetails implements UserDetailsService {
+public class EazyBankUserDetails  implements UserDetailsService {
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -35,5 +35,4 @@ public class EazyBankUserDetails implements UserDetailsService {
         }
         return new User(username,password,authorities);
     }
-
 }
