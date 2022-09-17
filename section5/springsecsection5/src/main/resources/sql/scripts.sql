@@ -18,8 +18,6 @@ CREATE TABLE `authorities` (
 INSERT IGNORE INTO `users` VALUES (NULL, 'happy', '12345', '1');
 INSERT IGNORE INTO `authorities` VALUES (NULL, 'happy', 'write');
 
-drop table `customer`;
-
 CREATE TABLE `customer` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(45) NOT NULL,
@@ -29,4 +27,4 @@ CREATE TABLE `customer` (
 );
 
 INSERT INTO `customer` (`email`, `pwd`, `role`)
- VALUES ('happy@example.com', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin');
+ VALUES ('johndoe@example.com', '54321', 'admin');
