@@ -10,9 +10,11 @@ import { NoticesComponent } from './components/notices/notices.component';
 import { LoansComponent } from './components/loans/loans.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'notices', component: NoticesComponent},
