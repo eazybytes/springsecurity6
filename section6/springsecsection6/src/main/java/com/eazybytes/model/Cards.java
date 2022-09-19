@@ -3,13 +3,15 @@ package com.eazybytes.model;
 import java.sql.Date;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "cards")
 public class Cards {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.AUTO,generator="native")
+	@GenericGenerator(name = "native",strategy = "native")
 	@Column(name = "card_id")
 	private int cardId;
 
