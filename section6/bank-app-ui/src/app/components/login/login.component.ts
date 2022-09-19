@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
         let xsrf = getCookie('XSRF-TOKEN')!;
         window.sessionStorage.setItem("XSRF-TOKEN",xsrf);
         this.router.navigate(['dashboard']);
-      }, error => {
-        console.log(error);
       });
 
   }
