@@ -11,18 +11,18 @@ import java.util.List;
 
 @RestController
 public class LoansController {
-	
-	@Autowired
-	private LoanRepository loanRepository;
-	
-	@GetMapping("/myLoans")
-	public List<Loans> getLoanDetails(@RequestParam int id) {
-		List<Loans> loans = loanRepository.findByCustomerIdOrderByStartDtDesc(id);
-		if (loans != null ) {
-			return loans;
-		}else {
-			return null;
-		}
-	}
+
+    @Autowired
+    private LoanRepository loanRepository;
+
+    @GetMapping("/myLoans")
+    public List<Loans> getLoanDetails(@RequestParam int id) {
+        List<Loans> loans = loanRepository.findByCustomerIdOrderByStartDtDesc(id);
+        if (loans != null ) {
+            return loans;
+        }else {
+            return null;
+        }
+    }
 
 }
