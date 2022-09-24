@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from "src/app/model/contact.model";
 import { NgForm } from '@angular/forms';
-import { getCookie } from 'typescript-cookie';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
 
