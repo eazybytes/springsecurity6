@@ -11,18 +11,18 @@ import java.util.List;
 
 @RestController
 public class CardsController {
-	
-	@Autowired
-	private CardsRepository cardsRepository;
-	
-	@GetMapping("/myCards")
-	public List<Cards> getCardDetails(@RequestParam int id) {
-		List<Cards> cards = cardsRepository.findByCustomerId(id);
-		if (cards != null ) {
-			return cards;
-		}else {
-			return null;
-		}
-	}
+
+    @Autowired
+    private CardsRepository cardsRepository;
+
+    @GetMapping("/myCards")
+    public List<Cards> getCardDetails(@RequestParam int id) {
+        List<Cards> cards = cardsRepository.findByCustomerId(id);
+        if (cards != null ) {
+            return cards;
+        }else {
+            return null;
+        }
+    }
 
 }

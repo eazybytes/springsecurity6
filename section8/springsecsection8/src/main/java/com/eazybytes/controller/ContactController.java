@@ -14,19 +14,19 @@ import com.eazybytes.repository.ContactRepository;
 @RestController
 public class ContactController {
 
-	@Autowired
-	private ContactRepository contactRepository;
-	
-	@PostMapping("/contact")
-	public Contact saveContactInquiryDetails(@RequestBody Contact contact) {
-		contact.setContactId(getServiceReqNumber());
-		contact.setCreateDt(new Date(System.currentTimeMillis()));
-		return contactRepository.save(contact);
-	}
+    @Autowired
+    private ContactRepository contactRepository;
 
-	public String getServiceReqNumber() {
-	    Random random = new Random();
-	    int ranNum = random.nextInt(999999999 - 9999) + 9999;
-	    return "SR"+ranNum;
-	}
+    @PostMapping("/contact")
+    public Contact saveContactInquiryDetails(@RequestBody Contact contact) {
+        contact.setContactId(getServiceReqNumber());
+        contact.setCreateDt(new Date(System.currentTimeMillis()));
+        return contactRepository.save(contact);
+    }
+
+    public String getServiceReqNumber() {
+        Random random = new Random();
+        int ranNum = random.nextInt(999999999 - 9999) + 9999;
+        return "SR"+ranNum;
+    }
 }
