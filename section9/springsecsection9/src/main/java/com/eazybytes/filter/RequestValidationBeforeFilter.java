@@ -14,7 +14,8 @@ import java.util.Base64;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 
-public class RequestValidationBeforeFilter implements Filter {
+public class RequestValidationBeforeFilter  implements Filter {
+
     public static final String AUTHENTICATION_SCHEME_BASIC = "Basic";
     private Charset credentialsCharset = StandardCharsets.UTF_8;
 
@@ -31,7 +32,7 @@ public class RequestValidationBeforeFilter implements Filter {
                 byte[] decoded;
                 try {
                     decoded = Base64.getDecoder().decode(base64Token);
-                    String token = new String(decoded, getCredentialsCharset(req));
+                    String token = new String(decoded, credentialsCharset);
                     int delim = token.indexOf(":");
                     if (delim == -1) {
                         throw new BadCredentialsException("Invalid basic authentication token");
@@ -47,13 +48,5 @@ public class RequestValidationBeforeFilter implements Filter {
             }
         }
         chain.doFilter(request, response);
-    }
-
-    protected Charset getCredentialsCharset(HttpServletRequest request) {
-        return getCredentialsCharset();
-    }
-
-    public Charset getCredentialsCharset() {
-        return this.credentialsCharset;
     }
 }

@@ -19,11 +19,11 @@ import javax.crypto.SecretKey;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-public class JWTTokenValidatorFilter extends OncePerRequestFilter {
+public class JWTTokenValidatorFilter  extends OncePerRequestFilter {
 
     @Override
-    public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-            throws IOException, ServletException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
         String jwt = request.getHeader(SecurityConstants.JWT_HEADER);
         if (null != jwt) {
             try {
@@ -45,9 +45,8 @@ public class JWTTokenValidatorFilter extends OncePerRequestFilter {
             }
 
         }
-        chain.doFilter(request, response);
+        filterChain.doFilter(request, response);
     }
-
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {

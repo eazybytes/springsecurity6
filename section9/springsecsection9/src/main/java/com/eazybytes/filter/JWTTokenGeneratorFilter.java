@@ -23,8 +23,8 @@ import java.util.Set;
 public class JWTTokenGeneratorFilter extends OncePerRequestFilter {
 
     @Override
-    public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-            throws IOException, ServletException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (null != authentication) {
             SecretKey key = Keys.hmacShaKeyFor(SecurityConstants.JWT_KEY.getBytes(StandardCharsets.UTF_8));
@@ -37,7 +37,7 @@ public class JWTTokenGeneratorFilter extends OncePerRequestFilter {
             response.setHeader(SecurityConstants.JWT_HEADER, jwt);
         }
 
-        chain.doFilter(request, response);
+        filterChain.doFilter(request, response);
     }
 
     @Override
