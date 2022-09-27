@@ -44,3 +44,5 @@
 - KeyCloak guides - https://www.keycloak.org/guides
 - KeyCloak Well known APIs - http://localhost:8180/realms/eazybankdev/.well-known/openid-configuration
 - Angular Keycloak library - https://www.npmjs.com/package/keycloak-angular
+- Keycloak official documentation - https://www.keycloak.org/documentation
+- Keycloak Admin REST APIs - https://www.keycloak.org/docs-api/19.0.2/rest-api/index.html
