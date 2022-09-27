@@ -36,3 +36,6 @@
 - AWS website - https://aws.amazon.com/
 - SQLECTRON website - https://sqlectron.github.io
 - Free MySQL DB website - https://www.freemysqlhosting.net
+- OAuth2 Website - https://oauth.net/2/
+- OAuth2 playground - https://www.oauth.com/playground/
+- Key Cloak Well known APIs - http://localhost:8180/realms/eazybankdev/.well-known/openid-configuration
