@@ -43,3 +43,4 @@
 - KeyCloak setup - https://www.keycloak.org/getting-started/getting-started-zip
 - KeyCloak guides - https://www.keycloak.org/guides
 - KeyCloak Well known APIs - http://localhost:8180/realms/eazybankdev/.well-known/openid-configuration
+- Angular Keycloak library - https://www.npmjs.com/package/keycloak-angular
