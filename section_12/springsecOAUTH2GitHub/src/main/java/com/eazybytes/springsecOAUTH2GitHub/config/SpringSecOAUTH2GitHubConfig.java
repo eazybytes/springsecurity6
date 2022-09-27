@@ -3,6 +3,10 @@ package com.eazybytes.springsecOAUTH2GitHub.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.oauth2.client.CommonOAuth2Provider;
+import org.springframework.security.oauth2.client.registration.ClientRegistration;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -14,31 +18,15 @@ public class SpringSecOAUTH2GitHubConfig {
         return http.build();
     }
 
-    /*private ClientRegistration clientRegistration() {
-		return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("ed7ee79c2df267957dc2")
-	           .clientSecret("e881a2e189ca66d4477dc678dad528bd1603b169").build();
-	 }*/
-
-
-    /*private ClientRegistration clientRegistration() {
-        ClientRegistration cr =
-                ClientRegistration.withRegistrationId("github").clientId(
-                                "ed7ee79c2df267957dc2").clientSecret("e881a2e189ca66d4477dc678dad528bd1603b169").scope(new String[]
-                                {"read:user"})
-                        .authorizationUri("https://github.com/login/oauth/authorize")
-                        .tokenUri("https://github.com/login/oauth/access_token").userInfoUri(
-                                "https://api.github.com/user")
-                        .userNameAttributeName("id").clientName("GitHub")
-                        .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                        .redirectUri("{baseUrl}/{action}/oauth2/code/{registrationId}").build();
-        return cr;
-    }*/
-
-
     /*@Bean
     public ClientRegistrationRepository clientRepository() {
         ClientRegistration clientReg = clientRegistration();
         return new InMemoryClientRegistrationRepository(clientReg);
-    }*/
+    }
+
+    private ClientRegistration clientRegistration() {
+		return CommonOAuth2Provider.GITHUB.getBuilder("github").clientId("8cf67ab304dc500092e3")
+	           .clientSecret("6e6f91851c864684af2f91eaa08fb5041162768e").build();
+	 }*/
 
 }
