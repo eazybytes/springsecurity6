@@ -5,6 +5,7 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -19,7 +20,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8081/',
+        url: 'http://localhost:8180/',
         realm: 'eazybankdev',
         clientId: 'eazypublicclient',
       },
@@ -34,6 +35,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     ContactComponent,
     LoginComponent,
     DashboardComponent,

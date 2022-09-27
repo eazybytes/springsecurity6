@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public logout() {
-    let redirectURI: string = "http://localhost:4200";
+    let redirectURI: string = "http://localhost:4200/home";
     this.keycloak.logout(redirectURI);
   }
 
