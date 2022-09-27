@@ -38,4 +38,8 @@
 - Free MySQL DB website - https://www.freemysqlhosting.net
 - OAuth2 Website - https://oauth.net/2/
 - OAuth2 playground - https://www.oauth.com/playground/
-- Key Cloak Well known APIs - http://localhost:8180/realms/eazybankdev/.well-known/openid-configuration
+- KeyCloak website - https://www.keycloak.org
+- KeyCloak Download page - https://www.keycloak.org/downloads
+- KeyCloak setup - https://www.keycloak.org/getting-started/getting-started-zip
+- KeyCloak guides - https://www.keycloak.org/guides
+- KeyCloak Well known APIs - http://localhost:8180/realms/eazybankdev/.well-known/openid-configuration
