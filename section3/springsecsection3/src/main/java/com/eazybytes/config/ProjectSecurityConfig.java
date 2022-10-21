@@ -28,6 +28,17 @@ public class ProjectSecurityConfig {
         return http.build();
     }
 
+    /**
+     * NoOpPasswordEncoder is not recommended for production usage.
+     * Use only for non-prod.
+     *
+     * @return PasswordEncoder
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+    }
+
     /*@Bean
     public InMemoryUserDetailsManager userDetailsService() {
         *//*Approach 1 where we use withDefaultPasswordEncoder() method
@@ -62,16 +73,5 @@ public class ProjectSecurityConfig {
     public UserDetailsService userDetailsService(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
     }*/
-
-    /**
-     * NoOpPasswordEncoder is not recommended for production usage.
-     * Use only for non-prod.
-     *
-     * @return PasswordEncoder
-     */
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
 
 }
