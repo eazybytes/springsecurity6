@@ -15,9 +15,9 @@ public class ProjectSecurityConfig {
          *  Below is the custom security configurations
          */
 
-        http.authorizeRequests()
-                        .antMatchers("/myAccount","/myBalance","/myLoans","/myCards").authenticated()
-                        .antMatchers("/notices","/contact").permitAll()
+        http.authorizeHttpRequests()
+                        .requestMatchers("/myAccount","/myBalance","/myLoans","/myCards").authenticated()
+                        .requestMatchers("/notices","/contact").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();
@@ -25,7 +25,7 @@ public class ProjectSecurityConfig {
         /**
          *  Configuration to deny all the requests
          */
-       /* http.authorizeRequests().anyRequest().denyAll()
+        /*http.authorizeHttpRequests().anyRequest().denyAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();*/
@@ -33,7 +33,7 @@ public class ProjectSecurityConfig {
         /**
          *  Configuration to permit all the requests
          */
-        /*http.authorizeRequests().anyRequest().permitAll()
+        /*http.authorizeHttpRequests().anyRequest().permitAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();*/
