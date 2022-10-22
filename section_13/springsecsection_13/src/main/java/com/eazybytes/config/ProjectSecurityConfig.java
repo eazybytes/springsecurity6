@@ -36,14 +36,14 @@ public class ProjectSecurityConfig {
                 config.setMaxAge(3600L);
                 return config;
             }
-        }).and().csrf().ignoringAntMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                .and().authorizeRequests()
-                        .antMatchers("/myAccount").hasRole("USER")
-                        .antMatchers("/myBalance").hasAnyRole("USER","ADMIN")
-                        .antMatchers("/myLoans").authenticated()
-                        .antMatchers("/myCards").hasRole("USER")
-                        .antMatchers("/user").authenticated()
-                        .antMatchers("/notices","/contact","/register").permitAll()
+        }).and().csrf().ignoringRequestMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and().authorizeHttpRequests()
+                        .requestMatchers("/myAccount").hasRole("USER")
+                        .requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
+                        .requestMatchers("/myLoans").authenticated()
+                        .requestMatchers("/myCards").hasRole("USER")
+                        .requestMatchers("/user").authenticated()
+                        .requestMatchers("/notices","/contact","/register").permitAll()
                 .and().oauth2ResourceServer().jwt().jwtAuthenticationConverter(jwtAuthenticationConverter);
         return http.build();
     }
