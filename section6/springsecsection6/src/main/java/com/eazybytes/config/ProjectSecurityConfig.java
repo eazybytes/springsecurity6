@@ -30,10 +30,10 @@ public class ProjectSecurityConfig {
                 config.setMaxAge(3600L);
                 return config;
             }
-        }).and().csrf().ignoringAntMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                .and().authorizeRequests()
-                        .antMatchers("/myAccount","/myBalance","/myLoans","/myCards", "/user").authenticated()
-                        .antMatchers("/notices","/contact","/register").permitAll()
+        }).and().csrf().ignoringRequestMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and().authorizeHttpRequests()
+                        .requestMatchers("/myAccount","/myBalance","/myLoans","/myCards", "/user").authenticated()
+                        .requestMatchers("/notices","/contact","/register").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();
