@@ -30,18 +30,18 @@ public class ProjectSecurityConfig {
                 config.setMaxAge(3600L);
                 return config;
             }
-        }).and().csrf().ignoringAntMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                .and().authorizeRequests()
+        }).and().csrf().ignoringRequestMatchers("/contact","/register").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and().authorizeHttpRequests()
                         /*.antMatchers("/myAccount").hasAuthority("VIEWACCOUNT")
                         .antMatchers("/myBalance").hasAnyAuthority("VIEWACCOUNT","VIEWBALANCE")
                         .antMatchers("/myLoans").hasAuthority("VIEWLOANS")
                         .antMatchers("/myCards").hasAuthority("VIEWCARDS")*/
-                        .antMatchers("/myAccount").hasRole("USER")
-                        .antMatchers("/myBalance").hasAnyRole("USER","ADMIN")
-                        .antMatchers("/myLoans").hasRole("USER")
-                        .antMatchers("/myCards").hasRole("USER")
-                        .antMatchers("/user").authenticated()
-                        .antMatchers("/notices","/contact","/register").permitAll()
+                        .requestMatchers("/myAccount").hasRole("USER")
+                        .requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
+                        .requestMatchers("/myLoans").hasRole("USER")
+                        .requestMatchers("/myCards").hasRole("USER")
+                        .requestMatchers("/user").authenticated()
+                        .requestMatchers("/notices","/contact","/register").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();
