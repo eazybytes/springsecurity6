@@ -51,7 +51,7 @@ public class ProjectSecurityConfig {
          *  In Spring Security 5, the default behavior is that the CsrfToken will be loaded on every request. Where as with
          *  Spring Security 6, the default is that the lookup of the CsrfToken will be deferred until it is needed. The developer
          *  has to write logic to read the CSRF token and send it as part of the response. When framework sees the CSRF token
-         *  in the response header, it takes of sending the same as Cookie as well. For the same, we need to use CsrfTokenRequestAttributeHandler
+         *  in the response header, it takes care of sending the same as Cookie as well. For the same, we need to use CsrfTokenRequestAttributeHandler
          *  and create a filter with the name CsrfCookieFilter which runs every time after the Spring Security in built filter BasicAuthenticationFilter
          *  like shown below. More details about Filters, are discussed inside the Section 8 of the course.
          */
