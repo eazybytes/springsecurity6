@@ -22,8 +22,8 @@ public class EazyBankUserDetails implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        String userName, password = null;
-        List<GrantedAuthority> authorities = null;
+        String userName, password;
+        List<GrantedAuthority> authorities;
         List<Customer> customer = customerRepository.findByEmail(username);
         if (customer.size() == 0) {
             throw new UsernameNotFoundException("User details not found for the user : " + username);
@@ -33,7 +33,7 @@ public class EazyBankUserDetails implements UserDetailsService {
             authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(customer.get(0).getRole()));
         }
-        return new User(username,password,authorities);
+        return new User(userName,password,authorities);
     }
 
 }
